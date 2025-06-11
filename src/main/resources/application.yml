@@ -1,2 +1,12 @@
-greeting:
-  message: "hello"
+quarkus:
+  datasource:
+    db-kind: mssql
+    username: defaultAdm
+    password: defaultAdm
+    jdbc:
+      url: jdbc:sqlserver://localhost:1433;databaseName=DB_CADASTRO;encrypt=false;trustServerCertificate=true
+  hibernate-orm:
+    database:
+      generation: none
+    log:
+      sql: true
