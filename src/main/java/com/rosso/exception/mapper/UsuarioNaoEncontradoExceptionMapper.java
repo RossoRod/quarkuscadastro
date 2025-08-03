@@ -9,6 +9,7 @@ import jakarta.ws.rs.ext.Provider;
 public class UsuarioNaoEncontradoExceptionMapper implements ExceptionMapper<UsuarioNaoEncontradoException> {
     @Override
     public Response toResponse(UsuarioNaoEncontradoException e) {
-        return Response.status(Response.Status.NOT_FOUND.getStatusCode(), "Usuário não encontrado").build();
+        return Response.status(Response.Status.NOT_FOUND.getStatusCode(),
+                "Usuário não encontrado").build();
     }
 }

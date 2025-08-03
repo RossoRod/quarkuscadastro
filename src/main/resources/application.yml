@@ -1,53 +1,13 @@
 quarkus:
-  health:
-    openapi:
-      included: true
-
-  #OpenAPI/Swagger - https://pt.quarkus.io/guides/openapi-swaggerui#openapi
-  smallrye-openapi:
-    always-run-filter: true
-    path: /swagger.json
-    security-scheme: jwt
-    security-scheme-name: Token de Autenticação
-    info-title: API Meu Plano
-    info-version: "1.0.0"
-    info-description: |
-      API para cadastro de usuario
-
-    info-contact-name: Rodrigo Balan Rosso
-    info-contact-email: rosso_rodrigo@hotmail.com
-
-  swagger-ui:
-    path: /q/swagger-ui
-    always-include: true
-    title: API Meu Plano
-    theme: feeling-blue
-    doc-expansion: list
-    display-operation-id: false
-    default-models-expand-depth: 1
-
-  live-reload:
-    instrumentation: true
-
   datasource:
     db-kind: mssql
     username: sa
-    password: defaultAdm
+    password: Str0ng!Passw0rd
     jdbc:
-      url: jdbc:sqlserver://localhost:1433;databaseName=DB_CADASTRO;encrypt=false;trustServerCertificate=true
+      url: jdbc:sqlserver://localhost:1433;databaseName=DB_QUARKUSCADASTRO;encrypt=false
+
   hibernate-orm:
     database:
-      generation: none
+      generation: update
     log:
       sql: true
-
-    hibernate-orm:
-      sqlserver:
-        packages:
-          - br.com.rosso.dominio.entity
-        datasource: sqlserver
-        log:
-          sql: false
-          format-sql: true
-        database:
-          generation: none
